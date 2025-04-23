@@ -7,10 +7,11 @@ from PIL import Image
 
 router = APIRouter()
 
+@router.post('')
 @router.post('/')
 async def run(data: ImageData):
     print("Received POST /calculate")
-    
+
     #image_data = base64.b64decode(data.image.split(",")[1])  # Assumes data:image/png;base64,<data>
     try:    
         image_data = base64.b64decode(data.image.split(",")[1])
